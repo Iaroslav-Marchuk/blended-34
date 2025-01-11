@@ -91,15 +91,54 @@
 //число (кількість хвилин) и виводить у консоль
 //рядок у форматі годин та хвилин
 
-const value = Number(prompt("insert number"));
-const hour = parseInt(value / 60);
-const minute = value - hour * 60;
+// const value = Number(prompt("insert number"));
+// const hour = parseInt(value / 60);
+// const minute = value - hour * 60;
 
 
-hour = String(hour).padStart(2, "0");
-minute = String(minute).padStart(2, "0");
-console.log(hour);
-console.log(minute);
+// hour = String(hour).padStart(2, "0");
+// minute = String(minute).padStart(2, "0");
+// console.log(hour);
+// console.log(minute);
+
+
+// Змінна num може набувати 4 значення: '1', '2', '3' або '4'
+// (запитуй це значення у користувача через prompt).
+// Якщо вона має значення '1', то у змінну result запишіть 'зима',
+// якщо має значення '2' - 'весна' і так далі.
+// Розв'яжіть завдання через switch-case.
+// Не забудьте про дефолтне значення, на випадок, якщо користувач
+// введе в prompt щось інше. В такому випадку result має набувати значення:
+// "Вибачте, але ви маєте ввести значення від 1 до 4 включно".
+// Значення змінної result виведіть в консоль.
+
+
+const num = Number(prompt("insert numebr from 1 to 4"));
+let result = "";
+switch (num) {
+    
+    case 1:
+        result = 'зима';
+        break;
+    case 2:
+        result = 'vesna';
+        break;
+    case 3:
+        result = 'lito';
+        break;
+    case 4:
+        result = 'osin';
+        break;
+    default:
+        result = "Вибачте, але ви маєте ввести значення від 1 до 4 включно";
+}
+
+console.log(result);
+
+
+
+
+
 
 
 
