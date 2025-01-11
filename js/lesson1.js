@@ -49,32 +49,60 @@
 // * перепиши код на функцію getNumbers(min, max)
 
 
-let sum = 0;
+// let sum = 0;
 
-// for (let i = max; i >= min; i--) {
-//     console.log(i)
+// // for (let i = max; i >= min; i--) {
+// //     console.log(i)
     
+// //     if (i % 2 === 0) {
+// //         sum = +i;
+// //     };
+// // }
+
+// // console.log(sum);
+ 
+// function getNumbers(min, max) {
+//     for (let i = max; i >= min; i--) {
+        
 //     if (i % 2 === 0) {
 //         sum = +i;
-//     };
+//         };
+        
+//     }
+//     return sum;
+    
+// }
+// console.log(getNumbers(3, 26));
+
+
+
+// Використайте цикл while, щоб вивести в console всі числа від 0 до 50 включно.
+
+// let number;
+
+// while (number <= 50) {
+//     console.log(number);
+//     i++;
 // }
 
-// console.log(sum);
- 
-function getNumbers(min, max) {
-    for (let i = max; i >= min; i--) {
-        
-    if (i % 2 === 0) {
-        sum = +i;
-        };
-        
-    }
-    return sum;
-    
-}
-console.log(getNumbers(3, 26));
 
-     
+
+//Напишіть программу, яка отримує від користувача
+//число (кількість хвилин) и виводить у консоль
+//рядок у форматі годин та хвилин
+
+const value = Number(prompt("insert number"));
+const hour = parseInt(value / 60);
+const minute = value - hour * 60;
+
+
+hour = String(hour).padStart(2, "0");
+minute = String(minute).padStart(2, "0");
+console.log(hour);
+console.log(minute);
+
+
+
 
 
 
