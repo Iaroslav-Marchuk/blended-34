@@ -31,7 +31,6 @@
 //   alert(`${min} входить в четверту чверть`);
 // }
 
-
 //Напишіть цикл, який виводить в консоль
 //числа от max до min по зменьшенню
 //Виведіть в консоль суму усіх парних чисел
@@ -44,22 +43,46 @@
 //     console.log(i)
 //     if (i % 2 === 0) {
 //         sum += i;
-        
+
 //     }
 // }
 
 // console.log(sum)
 
-function getNumbers(min, max) {
-    let sum = 0;
-    for (let i = max; i >= min; i--){
-        console.log(i)
-        if (i % 2 === 0) {
-            sum += i;
-            
-        }
-    }
-    return sum
-}
+// function getNumbers(min, max) {
+//     let sum = 0;
+//     for (let i = max; i >= min; i--){
+//         console.log(i)
+//         if (i % 2 === 0) {
+//             sum += i;
 
-console.log(getNumbers(0, 20))
+//         }
+//     }
+//     return sum
+// }
+
+// console.log(getNumbers(0, 20))
+
+// Використайте цикл while, щоб вивести в console всі числа від 0 до 50 включно.
+
+// let i = 0;
+// while (i <= 50) {
+//   console.log(i);
+//   i++;
+// }
+
+//Напишіть программу, яка отримує від користувача
+//число (кількість хвилин) и виводить у консоль
+//рядок у форматі годин та хвилин
+// https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/padStart
+// 70 === 01:10
+
+const value = Number(prompt("Ввeдіть число:"));
+let hour = parseInt(value/60);
+
+let min = value % 60;
+
+
+hour = String(hour).padStart(2, "0");
+min = String(min).padStart(2, "0");
+console.log(`${hour}:${min}`);
