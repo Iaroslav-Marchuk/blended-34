@@ -27,3 +27,34 @@ function logItems(array) {
 }
 
 console.log(logItems(styles));
+
+
+// 2. Напиши функцію checkLogin(array), яка перебирає масив логінів і перевіряє
+// чи є ім'я введене в prompt у цьому масиві і у разі,
+// якщо є - виводить повідомлення в alert "Welcome, <name>!"
+// в іншому випадку - "User not found"
+
+const logins = ["Peter", "John", "Igor", "Sasha"];
+
+
+function checkLogin(array) {
+    const login = prompt("Enter your login");
+
+    // for (const name of array) {
+    //     if (name === login) {
+    //         return `Welcome, ${name}!`
+    //     }
+       
+    // }
+    // return "User not found";
+
+    return array.includes(login) ? `Welcome, ${login}!`: "User not found"
+      
+
+}
+
+alert(checkLogin(logins));
+
+
+
+
