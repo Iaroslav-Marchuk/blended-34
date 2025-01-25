@@ -76,16 +76,62 @@
 // 3 - замінить значення premium на false
 // 4 - виводить зміст об'єкта user у форматі
 // '<ключ>:<значення>' використовуя Object.keys() та for...of
-const user = {
-  name: "John",
-  age: 20,
-  hobby: "tenis",
-  premium: true,
-};
-user.mood = "happy";
-user.hobby = "skydiving";
-user.premium = false;
-const userKeys = Object.keys(user);
-for (const key of userKeys) {
-  console.log(`${key} : ${user[key]}`);
+// const user = {
+//   name: "John",
+//   age: 20,
+//   hobby: "tenis",
+//   premium: true,
+// };
+// user.mood = "happy";
+// user.hobby = "skydiving";
+// user.premium = false;
+// const userKeys = Object.keys(user);
+// for (const key of userKeys) {
+//   console.log(`${key} : ${user[key]}`);
+// }
+
+// 9. Створіть об'єкт calculator з наступними методами:
+// read(a, b) - приймає два аргумента і зберігає їх
+// як властивості об'єкта
+// sum() повертає сумму збереженних значень (з перевіркою на наявність властивостей в об'єкті)
+// mult() перемножає збереженні значення і повертає результат (з перевіркою на наявність властивостей в об'єкті)
+// raise() возводить першу властивсть в ступінь другої і повертає результат (з перевіркою на наявність властивостей в об'єкті)
+// * винеси перевірку на наявність властивостей в об'єкті в окремий метод exist ()
+
+const calculator = {
+  read (a, b) {
+    this.a = a;
+    this.b = b; 
+  },
+  sum () {
+    if (this.exist()) {
+      const valuesSum = this.a + this.b;
+      return valuesSum;
+    }
+    return "Not values!";
+  },
+
+  mult () {
+    if (this.exist())
+    {const multiplyValues = this.a * this.b;
+  return multiplyValues;
 }
+  return "Not values!";
+  },
+  raise () {
+    if (this.exist()) {
+      const someValues =this.a**this.b;
+      return someValues;
+    }
+    return "Not values!";
+  },
+  exist () {
+    return this.a && this.b;
+    }
+  } 
+
+calculator.read (2, 5);
+console.log(calculator.sum());
+console.log(calculator.mult());
+console.log(calculator.raise());
+
