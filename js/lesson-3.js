@@ -104,6 +104,7 @@ const tweets = [
 // повторювань тегів і вони мають бути відсортовані в алфавітному порядку.
 // Використай ланцюжок методів.
 
+
 // function getSortedUniqueTags (array){
 //   return array.flatMap((element) => element.tags).filter((tag, index, array) => array.indexOf(tag) === index)
 //   .toSorted((a, b) => a.localeCompare(b));
