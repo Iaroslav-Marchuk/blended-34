@@ -104,8 +104,39 @@ const tweets = [
 // повторювань тегів і вони мають бути відсортовані в алфавітному порядку.
 // Використай ланцюжок методів.
 
-function getSortedUniqueTags (array){
-  return array.flatMap((element) => element.tags).filter((tag, index, array) => array.indexOf(tag) === index)
-  .toSorted((a, b) => a.localeCompare(b));
+
+// function getSortedUniqueTags (array){
+//   return array.flatMap((element) => element.tags).filter((tag, index, array) => array.indexOf(tag) === index)
+//   .toSorted((a, b) => a.localeCompare(b));
+// }
+// console.log(getSortedUniqueTags(tweets));
+
+
+// 1. Створи клас User для створення користувача з такими властивостями:
+// a. userName - ім'я, рядок
+// b. age - вік, число
+// c. numberOfPosts - кількість постів, число
+// d. конструктор очікує 1 параметр - об'єкт налаштувань з однойменними властивостями
+// Додай метод getInfo(), який повертає рядок:
+// `Користувачеві <name> <age> років і в нього <posts> публікацій.`
+// Додай метод updateNumberOfPosts(amount), який оновлює кількість постів юзера
+// де amount - це число, кількість постів, що має додаватись до вже існуючих у властивості numbersOfPost
+
+
+class User {
+  constructor(params) {
+    this.userName = params.userName;
+    this.age = params.age;
+    this.numberOfPosts = params.numberOfPosts; 
+  }
+  getInfo() {
+    return `Користувачеві ${this.userName} ${this.age} років і в нього ${this.numberOfPosts} публікацій.`;
+  }
+  updateNumberOfPosts(amount) {
+    this.numberOfPosts += amount;
+  }
 }
-console.log(getSortedUniqueTags(tweets));
+const user = new User({ userName: "Alex", age: 35, numberOfPosts: 5 });
+console.log(user);
+console.log(user.updateNumberOfPosts(5)); 
+console.log(user.getInfo()); 
