@@ -11,7 +11,7 @@
 
 // styles.push("rock-n-roll");
 
-// // styles[1] = "classic";
+// styles[1] = "classic";
 
 // const index = styles.indexOf("blues");
 
@@ -28,23 +28,23 @@
 
 // console.log(logItems(styles));
 
-// // 2. Напиши функцію checkLogin(array), яка перебирає масив логінів і перевіряє
-// // чи є ім'я введене в prompt у цьому масиві і у разі,
-// // якщо є - виводить повідомлення в alert "Welcome, <name>!"
-// // в іншому випадку - "User not found"
+// 2. Напиши функцію checkLogin(array), яка перебирає масив логінів і перевіряє
+// чи є ім'я введене в prompt у цьому масиві і у разі,
+// якщо є - виводить повідомлення в alert "Welcome, <name>!"
+//  в іншому випадку - "User not found"
 
 // const logins = ["Peter", "John", "Igor", "Sasha"];
 
 // function checkLogin(array) {
 //     const login = prompt("Enter your login");
 
-//     // for (const name of array) {
-//     //     if (name === login) {
-//     //         return `Welcome, ${name}!`
-//     //     }
+//  for (const name of array) {
+//   if (name === login) {
+//   return `Welcome, ${name}!`
+//  }
 
-//     // }
-//     // return "User not found";
+//  }
+// return "User not found";
 
 //     return array.includes(login) ? `Welcome, ${login}!`: "User not found"
 
@@ -130,12 +130,10 @@
 //     }
 //   }
 
-// // calculator.read (2, 5);
+//  calculator.read (2, 5);
 // console.log(calculator.sum());
 // console.log(calculator.mult());
 // console.log(calculator.raise());
-
-
 
 // 10. Створіть телефонну книгу - об'єкт phonebook,
 // у якого є властивість contacts (список контактів)
@@ -155,78 +153,72 @@
 // delete(name) - видаляє контакт з заданим ім'ям;
 // updateName(oldName, newName) - зиінює ім'я контакта;
 
+// const phonebook = {
+//     contacts: [
 
+//     ],
+//     add(data) {
+//         const newContact = {
+//             name: data.name,
+//             email: data.email,
+//             category: data.category || "default",
+//             id: this.generateId(),
+//             createdAt: this.getDate(),
 
-const phonebook = {
-    contacts: [
+//         }
+//         this.contacts.push(newContact);
+//     },
 
-    ],
-    add(data) {
-        const newContact = {
-            name: data.name,
-            email: data.email,
-            category: data.category || "default",
-            id: this.generateId(),
-            createdAt: this.getDate(),
+//     list() {
+//         console.table(this.contacts)
+//     },
 
-        }
-        this.contacts.push(newContact);
-    },
+//     filtered(category) {
+//         const filtredArr = [];
+//         for (const contact of this.contacts) {
+//             console.log(contact)
+//             if (contact.category === category) {
+//                 filtredArr.push(contact);
+//                             }
 
-    list() {
-        console.table(this.contacts)
-    },
+//         }
+//         console.log (filtredArr)
 
-    filtered(category) {
-        const filtredArr = [];
-        for (const contact of this.contacts) {
-            console.log(contact)
-            if (contact.category === category) {
-                filtredArr.push(contact);
-                            }
+//     },
+//     delete(name) {
+//         for (let i = 0; i < this.contacts.length; i++){
+//             if (this.contacts[i].name === name) {
+//                 this.contacts.splice(i, 1);
+//             }
+//         }
+//     },
 
-        }
-        console.log (filtredArr)
+//     updateName(oldName, newName) {},
 
-    },
-    delete(name) {
-        for (let i = 0; i < this.contacts.length; i++){
-            if (this.contacts[i].name === name) {
-                this.contacts.splice(i, 1);
-            }
-             
-        }
-    },
+//     generateId() {
+//       return "#" + Math.random().toString(36).substr(2, 9);
+//     },
+//     getDate() {
+//       return Date.now();
+//     },
+//   };
 
-    updateName(oldName, newName) {},
+//   phonebook.add({
+//   name: "Mango",
+//   email: "mango@mail.com",
+//   category: "friends",
+// });
 
-    generateId() {
-      return "#" + Math.random().toString(36).substr(2, 9);
-    },
-    getDate() {
-      return Date.now();
-    },
-  };
+// phonebook.add({
+//   name: "Poly",
+//   email: "poly@hotmail.com",
+// });
+// phonebook.add({
+//   name: "Katy",
+//   email: "katy@hotmail.com",
+//   category: "friends",
+// });
 
-
-
-  phonebook.add({
-  name: "Mango",
-  email: "mango@mail.com",
-  category: "friends",
-});
-
-phonebook.add({
-  name: "Poly",
-  email: "poly@hotmail.com",
-});
-phonebook.add({
-  name: "Katy",
-  email: "katy@hotmail.com",
-  category: "friends",
-});
-
-phonebook.delete("Poly");
-phonebook.list();
+// phonebook.delete("Poly");
+// phonebook.list();
 // phonebook.filtered("default");
-
