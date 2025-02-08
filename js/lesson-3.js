@@ -142,22 +142,63 @@ const tweets = [
 // get getClientData() має повертати об'єкт з переліченими властивостями
 // set changeEmail(newEmail) перезаписує пошту користувача
 
-class Client {
-  #login;
-  #email;
-  constructor(login, email) {
-    this.#login = login;
-    this.#email = email;
+// class Client {
+//   #login;
+//   #email;
+//   constructor(login, email) {
+//     this.#login = login;
+//     this.#email = email;
+//   }
+//   get getClientData() {
+//     return { clientLogin: this.#login, clientEmail: this.#email };
+//   }
+//   set changeEmail(newEmail) {
+//     this.#email = newEmail;
+//   }
+// }
+// const client = new Client("Alex", "alex@gmail.com");
+// console.log(client);
+// console.log(client.getClientData);
+// client.changeEmail = "alexgood@gmail.com";
+// console.log(client.getClientData.clientEmail);
+
+// 3. Напиши класс Notes який управляє коллекцієй нотаток у
+// властивості items.
+// Нотатка це  об'єкт з властивостями text, priority
+// Додай класу статичну властивість Priority,
+// в якій буде зберігатись об'єкт з пріорітетами ("high", "middle", "low").
+// Додай методи getNotes(), addNote(note), removeNote(noteText)
+// updatePriority(noteText, newPriority)
+
+class Notes {
+  static Priority = {
+    HIGH: "high",
+    MIDDLE: "middle",
+    LOW: "low",
+  };
+  constructor() {
+    this.items = [];
   }
-  get getClientData() {
-    return { clientLogin: this.#login, clientEmail: this.#email };
+  getNotes() {
+    return this.items;
   }
-  set changeEmail(newEmail) {
-    this.#email = newEmail;
+  addNote(note) {
+    this.items.push(note);
+  }
+  removeNote(noteText) {
+    this.items = this.items.filter((item) => item.text !== noteText);
+  }
+  updatePriority(noteText, newPriority) {
+    const item = this.items.find((item) => item.text === noteText);
+    if (item) {
+      item.priority = newPriority;
+    }
   }
 }
-const client = new Client("Alex", "alex@gmail.com");
-console.log(client);
-console.log(client.getClientData);
-client.changeEmail = "alexgood@gmail.com";
-console.log(client.getClientData.clientEmail);
+const notes = new Notes();
+notes.addNote({ text: "Note1", priority: Notes.Priority.LOW });
+notes.addNote({ text: "Note2", priority: Notes.Priority.LOW });
+notes.addNote({ text: "Note3", priority: Notes.Priority.HIGH });
+notes.removeNote("Note2");
+notes.updatePriority("Note3", Notes.Priority.MIDDLE);
+console.table(notes.getNotes());
