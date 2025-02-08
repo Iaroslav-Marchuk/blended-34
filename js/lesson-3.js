@@ -65,7 +65,6 @@ const tweets = [
 // }
 // console.log("getRandomValues:", getRandomValues(tweets, "id"));
 
-
 // 2. Напишіть функцію getUsersWithJs(array), яка приймає масив об'єктів і повертає масив тільки тих користувачів,
 // у кого є тег "js" (властивість tags)
 
@@ -76,7 +75,6 @@ const tweets = [
 // }
 
 // console.log(getUsersWithJs(tweets));
-
 
 // 3. Написати функцію getUsersWithGender(array, gender), яка приймає масив і стать
 // і повертає масив імен користувачів по цій статі (властивість gender)
@@ -98,19 +96,16 @@ const tweets = [
 
 // console.log(getUsersWithGender(tweets, "female"));
 
-
 // 4. Написати функцію getSortedUniqueTags(array), яка приймає масив
 // і повертає масив всіх тегів усіх користувачів (поле tags), при цьому не повинно бути
 // повторювань тегів і вони мають бути відсортовані в алфавітному порядку.
 // Використай ланцюжок методів.
-
 
 // function getSortedUniqueTags (array){
 //   return array.flatMap((element) => element.tags).filter((tag, index, array) => array.indexOf(tag) === index)
 //   .toSorted((a, b) => a.localeCompare(b));
 // }
 // console.log(getSortedUniqueTags(tweets));
-
 
 // 1. Створи клас User для створення користувача з такими властивостями:
 // a. userName - ім'я, рядок
@@ -122,21 +117,47 @@ const tweets = [
 // Додай метод updateNumberOfPosts(amount), який оновлює кількість постів юзера
 // де amount - це число, кількість постів, що має додаватись до вже існуючих у властивості numbersOfPost
 
+// class User {
+//   constructor(params) {
+//     this.userName = params.userName;
+//     this.age = params.age;
+//     this.numberOfPosts = params.numberOfPosts;
+//   }
+//   getInfo() {
+//     return `Користувачеві ${this.userName} ${this.age} років і в нього ${this.numberOfPosts} публікацій.`;
+//   }
+//   updateNumberOfPosts(amount) {
+//     this.numberOfPosts += amount;
+//   }
+// }
+// const user = new User({ userName: "Alex", age: 35, numberOfPosts: 5 });
+// console.log(user);
+// console.log(user.updateNumberOfPosts(5));
+// console.log(user.getInfo());
 
-class User {
-  constructor(params) {
-    this.userName = params.userName;
-    this.age = params.age;
-    this.numberOfPosts = params.numberOfPosts; 
+// 2. Напиши класс Client який створює об'єкт
+// із властивостями login, email
+// Об'яви приватні властивості #login і #email,
+// доступ до яких зроби через геттер и сеттер:
+// get getClientData() має повертати об'єкт з переліченими властивостями
+// set changeEmail(newEmail) перезаписує пошту користувача
+
+class Client {
+  #login;
+  #email;
+  constructor(login, email) {
+    this.#login = login;
+    this.#email = email;
   }
-  getInfo() {
-    return `Користувачеві ${this.userName} ${this.age} років і в нього ${this.numberOfPosts} публікацій.`;
+  get getClientData() {
+    return { clientLogin: this.#login, clientEmail: this.#email };
   }
-  updateNumberOfPosts(amount) {
-    this.numberOfPosts += amount;
+  set changeEmail(newEmail) {
+    this.#email = newEmail;
   }
 }
-const user = new User({ userName: "Alex", age: 35, numberOfPosts: 5 });
-console.log(user);
-console.log(user.updateNumberOfPosts(5)); 
-console.log(user.getInfo()); 
+const client = new Client("Alex", "alex@gmail.com");
+console.log(client);
+console.log(client.getClientData);
+client.changeEmail = "alexgood@gmail.com";
+console.log(client.getClientData.clientEmail);
