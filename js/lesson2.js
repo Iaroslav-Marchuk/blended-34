@@ -1,7 +1,6 @@
 // 1. Створіть масив styles з елементами 'jazz' і 'blues'
 // Додайте в кінець 'rock-n-roll'
 // Заменіть значення 'blues' на 'classic'
-// Напишіть функцію logItems(array), яка приймає
 // масив і використовує цикл for, який для кожного елемента
 // буде виводити повідомлення у форматі:
 // <номер елемента> - <значення елемента>
@@ -18,40 +17,22 @@
 // if (index !== -1) {
 //   styles[index] = "classic";
 // }
-
-// function logItems(array) {
 //   for (let i = 0; i < array.length; i++) {
 //     const element = array[i];
-//     console.log(`${i + 1} - ${element}`);
 //   }
 // }
-
-// console.log(logItems(styles));
-
 // // 2. Напиши функцію checkLogin(array), яка перебирає масив логінів і перевіряє
 // // чи є ім'я введене в prompt у цьому масиві і у разі,
 // // якщо є - виводить повідомлення в alert "Welcome, <name>!"
 // // в іншому випадку - "User not found"
-
-// const logins = ["Peter", "John", "Igor", "Sasha"];
-
 // function checkLogin(array) {
-//     const login = prompt("Enter your login");
-
 //     // for (const name of array) {
-//     //     if (name === login) {
 //     //         return `Welcome, ${name}!`
 //     //     }
 
 //     // }
 //     // return "User not found";
-
-//     return array.includes(login) ? `Welcome, ${login}!`: "User not found"
-
 // }
-
-// alert(checkLogin(logins));
-
 // Напишіть функцію, яка складатиме сусідні числа і пушитиме їх в новий масив
 
 // const someArr = [22, 11, 34, 5, 12, 13, 14, 15];
@@ -67,8 +48,6 @@
 //   }
 //   return newArray;
 // }
-// console.log(sum(someArr));
-
 // 7. Напиши скрипт, який для об'єкту user,
 // послідовно:
 // 1 - додасть поле mood зі значенням 'happy'
@@ -87,7 +66,6 @@
 // user.premium = false;
 // const userKeys = Object.keys(user);
 // for (const key of userKeys) {
-//   console.log(`${key} : ${user[key]}`);
 // }
 
 // 9. Створіть об'єкт calculator з наступними методами:
@@ -131,12 +109,6 @@
 //   }
 
 // // calculator.read (2, 5);
-// console.log(calculator.sum());
-// console.log(calculator.mult());
-// console.log(calculator.raise());
-
-
-
 // 10. Створіть телефонну книгу - об'єкт phonebook,
 // у якого є властивість contacts (список контактів)
 // та методи управління книгою:
@@ -155,62 +127,62 @@
 // delete(name) - видаляє контакт з заданим ім'ям;
 // updateName(oldName, newName) - зиінює ім'я контакта;
 
-
-
+// object
 const phonebook = {
-    contacts: [
+  // empty massive
+  contacts: [],
 
-    ],
-    add(data) {
-        const newContact = {
-            name: data.name,
-            email: data.email,
-            category: data.category || "default",
-            id: this.generateId(),
-            createdAt: this.getDate(),
+  add(data) {
+    // object
+    const newContact = {
+      name: data.name,
+      email: data.email,
+      category: data.category || "default",
+      id: this.generateId(),
+      createdAt: this.getDate(),
+    };
+    this.contacts.push(newContact);
+  },
 
-        }
-        this.contacts.push(newContact);
-    },
+  list() {
+    console.table(this.contacts);
+  },
 
-    list() {
-        console.table(this.contacts)
-    },
+  filtered(category) {
+    const filtredArr = [];
+    for (const contact of this.contacts) {
+      if (contact.category === category) {
+        filtredArr.push(contact);
+      }
+    }
+  },
+  delete(name) {
+    for (let i = 0; i < this.contacts.length; i++) {
+      if (this.contacts[i].name === name) {
+        this.contacts.splice(i, 1);
+      }
+    }
+  },
 
-    filtered(category) {
-        const filtredArr = [];
-        for (const contact of this.contacts) {
-            console.log(contact)
-            if (contact.category === category) {
-                filtredArr.push(contact);
-                            }
+  updateName(oldName, newName) {},
 
-        }
-        console.log (filtredArr)
+  generateId() {
+    return "#" + Math.random().toString(36).substr(2, 9);
+  },
+  getDate() {
+    const now = new Date(); // Отримуємо поточну дату та час
+    const day = String(now.getDate()).padStart(2, "0"); // Отримуємо день (додаємо 0, якщо менше 10)
+    const month = String(now.getMonth() + 1).padStart(2, "0"); // Отримуємо місяць (місяці з 0 до 11)
+    const year = now.getFullYear(); // Отримуємо рік
+    const hours = String(now.getHours()).padStart(2, "0"); // Отримуємо години
+    const minutes = String(now.getMinutes()).padStart(2, "0"); // Отримуємо хвилини
 
-    },
-    delete(name) {
-        for (let i = 0; i < this.contacts.length; i++){
-            if (this.contacts[i].name === name) {
-                this.contacts.splice(i, 1);
-            }
-             
-        }
-    },
+    // Формуємо рядок у форматі DD/MM/YYYY HH:mm
+    return `${day}/${month}/${year} ${hours}:${minutes}`;
+  },
+};
 
-    updateName(oldName, newName) {},
-
-    generateId() {
-      return "#" + Math.random().toString(36).substr(2, 9);
-    },
-    getDate() {
-      return Date.now();
-    },
-  };
-
-
-
-  phonebook.add({
+phonebook.add({
   name: "Mango",
   email: "mango@mail.com",
   category: "friends",
@@ -229,4 +201,3 @@ phonebook.add({
 phonebook.delete("Poly");
 phonebook.list();
 // phonebook.filtered("default");
-
