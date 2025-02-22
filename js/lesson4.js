@@ -84,17 +84,10 @@
 //   newElement.style.left = `${randomither(95)}%`;
 // }
 
-
-
-
-
-
-
 // 3. Створити розмітку на основі масива даних, де у кожного елемента списку
 // буде вказано ім'я, кількість лайків і перелічені теги
 // в index.html додайте список ul.stats, в який буде рендеритись цей список
 // *властивість gender використай для додавання відповідного класу елементу списка
-
 
 // const tweets = [
 //   { id: "000", name: "Alex", gender: "male", likes: 5, tags: ["js", "nodejs"] },
@@ -142,11 +135,8 @@
 //   },
 // ];
 
-
-
 // const stats = document.querySelector(".stats");
 // let markup = '';
-
 
 // tweets.forEach(item => {
 //   markup += `<li class="stats-item ${item.gender}">
@@ -176,17 +166,36 @@
 //   }
 // }
 
-
 // 5. Натиснувши кнопку "Подвоювати", збільшити значення
 // у кожному елементі списку у 2 рази
 
-const double = document.querySelector('#double');
-const listItems = document.querySelectorAll('.listItem');
+// const double = document.querySelector('#double');
+// const listItems = document.querySelectorAll('.listItem');
 
-double.addEventListener('click', doubleItems);
+// double.addEventListener('click', doubleItems);
 
-function doubleItems() {
-  listItems.forEach(item => {
-    item.textContent *=  2;
-  })
+// function doubleItems() {
+//   listItems.forEach(item => {
+//     item.textContent *=  2;
+//   })
+// }
+
+// При натисканні на будь-який рядок у табличці відобразіть
+//  повідомлення з назвою продукту та його ціною.
+//  "Ви вибрали <product> за <price>".
+
+const productTable = document.querySelector("#productTable");
+const productDetails = document.querySelector("#productDetails");
+
+productTable.addEventListener("click", showPrice);
+
+function showPrice(event) {
+  if (event.target.nodeName !== "TD") {
+    return;
+  }
+  const parent = event.target.parentNode;
+
+  const product = parent.firstElementChild.textContent;
+  const price = parent.lastElementChild.textContent;
+  productDetails.textContent = `Ви вибрали ${product} за ${price}.`;
 }
