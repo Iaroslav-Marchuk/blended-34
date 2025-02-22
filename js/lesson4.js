@@ -96,65 +96,97 @@
 // *властивість gender використай для додавання відповідного класу елементу списка
 
 
-const tweets = [
-  { id: "000", name: "Alex", gender: "male", likes: 5, tags: ["js", "nodejs"] },
-  {
-    id: "001",
-    name: "Kate",
-    gender: "female",
-    likes: 2,
-    tags: ["html", "css"],
-  },
-  {
-    id: "002",
-    name: "Maria",
-    gender: "female",
-    likes: 17,
-    tags: ["html", "js", "nodejs"],
-  },
-{
-    id: "003",
-    name: "Borys",
-    gender: "male",
-    likes: 8,
-    tags: ["css", "react"],
-  },
-  {
-    id: "004",
-    name: "Jhon",
-    gender: "male",
-    likes: 10,
-    tags: ["js", "nodejs", "react"],
-  },
-{
-    id: "005",
-    name: "Anna",
-    gender: "female",
-    likes: 3,
-    tags: ["js", "nodejs", "react"],
-  },
-  {
-    id: "006",
-    name: "Jhon",
-    gender: "male",
-    likes: 0,
-    tags: ["js", "nodejs", "react"],
-  },
-];
+// const tweets = [
+//   { id: "000", name: "Alex", gender: "male", likes: 5, tags: ["js", "nodejs"] },
+//   {
+//     id: "001",
+//     name: "Kate",
+//     gender: "female",
+//     likes: 2,
+//     tags: ["html", "css"],
+//   },
+//   {
+//     id: "002",
+//     name: "Maria",
+//     gender: "female",
+//     likes: 17,
+//     tags: ["html", "js", "nodejs"],
+//   },
+// {
+//     id: "003",
+//     name: "Borys",
+//     gender: "male",
+//     likes: 8,
+//     tags: ["css", "react"],
+//   },
+//   {
+//     id: "004",
+//     name: "Jhon",
+//     gender: "male",
+//     likes: 10,
+//     tags: ["js", "nodejs", "react"],
+//   },
+// {
+//     id: "005",
+//     name: "Anna",
+//     gender: "female",
+//     likes: 3,
+//     tags: ["js", "nodejs", "react"],
+//   },
+//   {
+//     id: "006",
+//     name: "Jhon",
+//     gender: "male",
+//     likes: 0,
+//     tags: ["js", "nodejs", "react"],
+//   },
+// ];
 
 
 
-const stats = document.querySelector(".stats");
-let markup = '';
+// const stats = document.querySelector(".stats");
+// let markup = '';
 
 
-tweets.forEach(item => {
-  markup += `<li class="stats-item ${item.gender}">
-        <p class="stats-name">${item.name}</p>
-        <p class="stats-likes">${item.likes} likes</p>
-        <p class="stats-tags">${item.tags}</p>
-      </li>`
-})
+// tweets.forEach(item => {
+//   markup += `<li class="stats-item ${item.gender}">
+//         <p class="stats-name">${item.name}</p>
+//         <p class="stats-likes">${item.likes} likes</p>
+//         <p class="stats-tags">${item.tags}</p>
+//       </li>`
+// })
 
-stats.innerHTML = markup;
+// stats.innerHTML = markup;
 
+// 4. Кнопка "Приховати" ховає текст і замінює назву кнопки на
+// "Розкрити", при повторному натисканні текст знову стає доступним
+// і кнопка набуває початкового вигляду.
+// const passwordInput = document.querySelector('#passwordInput');
+// const passwordButton = document.querySelector('#passwordButton');
+
+// passwordButton.addEventListener('click', hideText);
+
+// function hideText() {
+//   if (passwordButton.textContent === 'Приховати') {
+//   passwordInput.style.color = 'transparent';
+//   passwordButton.textContent = 'Розкрити';
+//   } else {
+//     passwordInput.style.color = 'inherit';
+//     passwordButton.textContent = 'Приховати';
+//   }
+// }
+
+
+// 5. Натиснувши кнопку "Подвоювати", збільшити значення
+// у кожному елементі списку у 2 рази
+
+const double = document.querySelector('#double');
+const listItems = document.querySelectorAll('.listItem');
+
+double.addEventListener('click', doubleItems);
+
+function doubleItems() {
+  listItems.forEach(item => {
+    item.textContent *=  2;
+  })
+}
