@@ -1,0 +1,41 @@
+.stats {
+  display: flex; /* Робимо список флекс-контейнером */
+  list-style-type: none; /* Прибрати маркери списку */
+  padding: 0;
+  margin: 0;
+  gap: 10px; /* Відстань між елементами списку */
+  flex-wrap: wrap; /* Додаємо можливість переносу елементів на новий рядок при переповненні */
+}
+.stats-item {
+  padding: 10px;
+  border: 1px solid #ddd; /* Рамка */
+  border-radius: 5px;
+  flex: 1 1 150px; /* Елементи мають мінімальну ширину 150px і можуть розширюватися */
+  display: flex;
+  flex-direction: column; /* Вирівнюємо вміст елементів вертикально */
+}
+.stats-item.male {
+  background-color: rgb(102, 102, 145);
+}
+
+.stats-item.female {
+  background-color: rgb(179, 108, 149);
+}
+
+.stats p {
+  margin: 5px 0; /* Відступи між текстовими блоками */
+}
+.stats-name {
+  color: #333;
+  font-weight: bold; /* Ім'я зробити жирним */
+  font-size: 1.2em; /* Збільшений розмір шрифту для імені */
+}
+
+.stats-likes {
+  color: rgb(163, 154, 154);
+}
+
+.stats-tags {
+  font-style: italic; /* Похилий стиль для тегів */
+  color: #0916ab; /* Синій колір для тегів */
+}
