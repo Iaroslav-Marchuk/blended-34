@@ -39,3 +39,29 @@
   font-style: italic; /* Похилий стиль для тегів */
   color: #0916ab; /* Синій колір для тегів */
 }
+
+
+
+
+input {
+  padding: 10px; /* Внутрішні відступи для зручності введення тексту */
+  border: 1px solid #ccc; /* Світло-сіра рамка */
+  border-radius: 5px; /* Закруглені краї */
+  font-size: 1em; /* Розмір шрифту */
+  width: 200px; /* Ширина поля вводу */
+}
+
+button {
+  padding: 10px 15px; /* Внутрішні відступи для кнопки */
+  background-color: #007bff; /* Синій фон */
+  color: white; /* Білий колір тексту */
+  border: none; /* Без рамки */
+  border-radius: 5px; /* Закруглені краї */
+  cursor: pointer; /* Курсор у вигляді руки при наведенні */
+  font-size: 1em; /* Розмір шрифту кнопки */
+  transition: background-color 0.3s; /* Анімація переходу фону */
+}
+
+button:hover {
+  background-color: #0056b3; /* Темніший відтінок при наведенні */
+}
